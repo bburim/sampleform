@@ -1,6 +1,10 @@
 <?php
 
 if (!empty($_POST)) {
+    echo '<pre>';
+    var_dump($_SERVER);
+    echo '</pre>';
+    die();
     $ch = curl_init();
     curl_setopt_array($ch, [
         CURLOPT_URL => getenv('DEST_URL'),
