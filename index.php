@@ -3,7 +3,7 @@
 if (!empty($_POST)) {
     $ch = curl_init();
     curl_setopt_array($ch, [
-        CURLOPT_URL => 'https://webhook.site/0c9df071-bf9e-459e-99c9-125ea1d270a1',
+        CURLOPT_URL => getenv('DEST_URL'),
         CURLOPT_POST =>  true,
         CURLOPT_POSTFIELDS => http_build_query($_POST)
     ]);
