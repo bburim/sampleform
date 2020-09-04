@@ -39,7 +39,7 @@ if (!empty($_POST)) {
       <div class="row">
         <div class="col-md-12 order-md-1">
           <h4 class="mb-3">User info</h4>
-          <form method="POST" action="form.php">
+          <form method="POST" action="index.php">
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
