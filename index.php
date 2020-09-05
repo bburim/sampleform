@@ -1,5 +1,10 @@
 <?php
 
+if (!empty($_GET['info'])) {
+    phpinfo();
+    die();
+}
+
 if (!empty($_POST)) {
     echo '<pre>';
     var_dump($_SERVER);
