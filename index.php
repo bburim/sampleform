@@ -7,6 +7,9 @@ if (!empty($_GET['info'])) {
 
 if (!empty($_POST)) {
     echo '<pre>';
+    var_dump(getenv('DEST_URL'));
+    var_dump(getenv('testvar'));
+    var_dump($_ENV);
     var_dump($_SERVER);
     echo '</pre>';
     die();
