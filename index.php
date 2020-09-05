@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 if (!empty($_GET['info'])) {
     phpinfo();
     die();
@@ -18,7 +21,7 @@ if (!empty($_POST)) {
         CURLOPT_POSTFIELDS => http_build_query($_POST)
     ]);
     curl_exec($ch);
-    die('Thanks!');
+    die('Thanks! ' . $dest_url);
 }
 ?>
 <!DOCTYPE html>
