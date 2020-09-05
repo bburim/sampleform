@@ -6,17 +6,15 @@ if (!empty($_GET['info'])) {
 }
 
 if (!empty($_POST)) {
-    echo '<pre>';
-    var_dump(getenv('DEST_URL'));
-    var_dump(getenv('testvar'));
-    var_dump($_ENV);
-    var_dump($_SERVER);
-    echo '</pre>';
-    die();
+    $dest_url = getenv('DEST_URL');
+    if (empty($dest_url)) {
+        die('DEST_URL is missing!');
+    }
+    
     $ch = curl_init();
     curl_setopt_array($ch, [
-        CURLOPT_URL => getenv('DEST_URL'),
-        CURLOPT_POST =>  true,
+        CURLOPT_URL => $dest_url,
+        CURLOPT_POST => true,
         CURLOPT_POSTFIELDS => http_build_query($_POST)
     ]);
     curl_exec($ch);
